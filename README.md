@@ -3,11 +3,9 @@
 These exercises were created to guide a lunch & learn to introduce junior software developers
 to the eccentric nature of JavaScript.
 
-## 1. Variables & Types
+## Variables & Types
 
-### Hello world
-
-#### Strings
+### Strings
 
 ```javascript
 var str1 = 'Hello World';
@@ -19,11 +17,45 @@ console.log(str1 === str2);
 ```
 
 > Hello World
+>
 > Hello World
+>
 > true
 
-
 ### Truthiness & Falsiness
+
+```javascript
+var und;
+var n = null;
+var arr1 = 
+  [ ""
+  , "false"
+  , "true"
+  , und
+  , n
+  , -1
+  , 0
+  , 1
+  , true
+  , false
+  , []
+  , [1,2,3]
+  , {}
+  , {a:1}];
+
+var i = 0;
+var len = arr1.length;
+for(i; i < len; i++) {
+  var str = "'" + arr1[0] + "' is considered ";
+  if (arr1[0]) {
+    str = str + "true";
+  } else {
+    str = str + "false";
+  }
+
+  console.log(str);
+}
+```
 
 ### Equality
 
