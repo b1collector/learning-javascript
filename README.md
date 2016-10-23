@@ -32,7 +32,7 @@ var arr1 = [ "", "false", "true", und, n, -1, 0, 1, true, false, [], [1,2,3], {}
 var i = 0;
 var len = arr1.length;
 for(i; i < len; i++) {
-  var str = "'" + arr1[i] + "' (" + typeof(arr1[i]) + ") is considered " + arr1[i] ? str = str + "true" : str = str + "false";
+  var str = "'" + arr1[i] + "' (" + typeof(arr1[i]) + ") is considered " + (arr1[i] ? "true" : "false");
 
   console.log(str);
 }
