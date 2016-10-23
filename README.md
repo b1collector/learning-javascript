@@ -208,13 +208,13 @@ function map(fn, arr){
   var l = arr.length;
   var newArr = [];
   for(i = 0; i < l; i++){
-    newArr.append(fn(arr[i]));
+    newArr.push(fn(arr[i]));
   }
   return newArr;
 }
 
-function captialize(x){
-  return string.charAt(0).toUpperCase() + x.slice(1);
+function capitalize(x){
+  return x.charAt(0).toUpperCase() + x.slice(1);
 }
 
 function double(x){
@@ -226,6 +226,25 @@ console.log(map(capitalize, ["sam", "jane", "horatio"]));
 ```
 
 ### Partial Application
+
+```javascript
+function map(fn, arr){
+  var i;
+  var l = arr.length;
+  var newArr = [];
+  for(i = 0; i < l; i++){
+    newArr.push(fn(arr[i]));
+  }
+  return newArr;
+}
+
+// partially appliable method
+function multiply(x){
+  return function (y) { return x * y;};
+}
+
+console.log(map(multiple(2), [1,2,3,5,8,13,21]));
+```
 
 ## 3. Objects
 
