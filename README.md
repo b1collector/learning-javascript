@@ -35,25 +35,44 @@ for(i; i < len; i++) {
 ### Equality
 
 ```javascript
+console.log("undefined equality");
 console.log(undefined == null); // true
 console.log(undefined === null); // false
 
+console.log("numeric equality");
+console.log(1 === 1.0); //true
+
+console.log("string equality");
 console.log(0 == "0"); //true
 console.log(0 === "0"); //false
 console.log(true == "true"); // false
+console.log("string" === "string"); //true
 
+console.log("object equality");
 var obj = {};
 console.log({} == {}); // false
 console.log(obj == {}); //false
 console.log(obj === obj); // true
-
 console.log([] == []); // false
-console.log("string" === "string"); //true
 ```
 
-### Null, undefined
-
 ## 2. Functions
+
+### Hoisted Function Definitions
+
+```javascript
+var msg = "Hello world!";
+sayMsg1(msg);
+sayMsg2(msg);
+
+var sayMsg1 = function (msg) {
+  console.log("sayMsg1 says: " + msg);
+}
+
+function sayMsg2(msg) {
+  console.log("sayMsg2 says: " + msg);
+}
+```
 
 ## 3. Objects
 
