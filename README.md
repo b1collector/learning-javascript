@@ -116,7 +116,7 @@ for (i = 0; i < 10; i++) {
 ```
 
 <details>
-  <summary>How does the browser see thei code?</summary>
+  <summary>How does the browser see this code?</summary>
   <p>
 ```javascript
 function fn(x) {
@@ -128,16 +128,88 @@ function fn(x) {
   }
   return y;
 }
+
+var i;
+for (i = 0; i < 10; i++) {
+  console.log(fn(i));
+}
 ```
   </p>
 </details>
 
+### Native Modules via Closures
+
+```javascript
+var teams = (function (defaultTeams) {
+  function buildAssignments(){
+    var i;
+    var l = defaultTeams.length;
+    var o = {};
+    for(i = 0; i < l; i++){
+      o[defaultTeams[i] = [];
+    }
+    return o;
+  }
+
+  var names = defaultTeams;
+  var workAssignments = buildAssignments();
+
+
+
+  function getTeams(){
+    return names.slice();
+  }
+
+  function getWork(team) {
+    if(names.indexOf(team) !== -1){
+      return workAssignments[team];
+    }
+    return [];
+  }
+
+  function assignWork(team, work){
+    if (names.indexOf(team) === -1) {
+      return;
+    }
+
+    workAssignements[team].append(work);
+  }
+
+  return {
+    teams: getTeams,
+    work: getWork,
+    assignWork: assignWork
+  };
+})(["cinnamon", "gold", "blue", "green"]);
+
+console.log(teams.teams); // access module value
+console.log(names); // undefined
+```
+
 ### Arguments
+
+```javascript
+function sum() {
+  var i;
+  var l = arguments.length;
+  var sum = 0;
+  for(i = 0; i < l; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+sum(1,2,3,5,8,13,21);
+```
 
 ### Higher-order Functions
 
+```javascript
+function aggregate(fn, init, arr){
+}
+```
+
+### Partial Application
+
 ## 3. Objects
 
-## 4. Functional Programming
-
-## 5. Object-oriented Programming
