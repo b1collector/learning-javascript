@@ -146,7 +146,7 @@ var teams = (function (defaultTeams) {
     var l = defaultTeams.length;
     var o = {};
     for(i = 0; i < l; i++){
-      o[defaultTeams[i] = [];
+      o[defaultTeams[i]] = [];
     }
     return o;
   }
