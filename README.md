@@ -65,14 +65,38 @@ var msg = "Hello world!";
 sayMsg1(msg);
 sayMsg2(msg);
 
-var sayMsg1 = function (msg) {
+function sayMsg1(msg) {
   console.log("sayMsg1 says: " + msg);
 }
 
-function sayMsg2(msg) {
+var sayMsg2 = function (msg) {
+  console.log("sayMsg2 says: " + msg);
+}
+
+```
+
+<details>
+<summary>How does the browser see this code?</summary>
+<p>
+```javascript
+var msg = "Hello world!";
+
+function sayMsg1(msg) {
+  console.log("sayMsg1 says: " + msg);
+}
+
+var sayMsg2;
+
+sayMsg1(msg);
+sayMsg2(msg);
+
+sayMsg2 = function (msg) {
   console.log("sayMsg2 says: " + msg);
 }
 ```
+</p>
+</details>
+
 
 ## 3. Objects
 
