@@ -97,6 +97,44 @@ sayMsg2 = function (msg) {
   </p>
 </details>
 
+### Hoisted Function Scope
+
+```javascript
+function fn(x) {
+  if (x % 2 === 0) {
+    var y = "even";
+  } else {
+    y = "odd";
+  }
+  return y;
+}
+
+var i;
+for (i = 0; i < 10; i++) {
+  console.log(fn(i));
+}
+```
+
+<details>
+  <summary>How does the browser see thei code?</summary>
+  <p>
+```javascript
+function fn(x) {
+  var y;
+  if (x % 2 === 0) {
+    y = "even";
+  } else {
+    y = "odd";
+  }
+  return y;
+}
+```
+  </p>
+</details>
+
+### Arguments
+
+### Higher-order Functions
 
 ## 3. Objects
 
