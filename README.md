@@ -243,8 +243,35 @@ function multiply(x){
   return function (y) { return x * y;};
 }
 
-console.log(map(multiple(2), [1,2,3,5,8,13,21]));
+console.log(map(multiply(2), [1,2,3,5,8,13,21]));
 ```
 
 ## 3. Objects
+
+### Constructors
+
+```javascript
+function MyObject(name, title){
+  var that = this;
+  that.name = name;
+
+  that.sayHello = function () {
+    console.log("Hello " + title + " " + name + ". How are you?");
+  };
+
+  that.thisVsThat = function () {
+    console.log(that.name);
+    console.log(this.name);
+  };
+}
+
+var name = "Bad name";
+var obj = new MyObject("Sam Spade", "Detective");
+obj.sayHello();
+obj.thisVsThat();
+```
+
+### Prototype
+
+### Extension Methods
 
