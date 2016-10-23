@@ -154,8 +154,6 @@ var teams = (function (defaultTeams) {
   var names = defaultTeams;
   var workAssignments = buildAssignments();
 
-
-
   function getTeams(){
     return names.slice();
   }
@@ -182,7 +180,7 @@ var teams = (function (defaultTeams) {
   };
 })(["cinnamon", "gold", "blue", "green"]);
 
-console.log(teams.teams); // access module value
+console.log(teams.teams()); // access module value
 console.log(names); // undefined
 ```
 
@@ -205,8 +203,26 @@ sum(1,2,3,5,8,13,21);
 ### Higher-order Functions
 
 ```javascript
-function aggregate(fn, init, arr){
+function map(fn, arr){
+  var i;
+  var l = arr.length;
+  var newArr = [];
+  for(i = 0; i < l; i++){
+    newArr.append(fn(arr[i]));
+  }
+  return newArr;
 }
+
+function captialize(x){
+  return string.charAt(0).toUpperCase() + x.slice(1);
+}
+
+function double(x){
+  return x * 2;
+}
+
+console.log(map(double, [1,2,3,5,8,13,21]));
+console.log(map(capitalize, ["sam", "jane", "horatio"]));
 ```
 
 ### Partial Application
