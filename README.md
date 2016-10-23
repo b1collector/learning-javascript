@@ -76,8 +76,8 @@ var sayMsg2 = function (msg) {
 ```
 
 <details>
-<summary>How does the browser see this code?</summary>
-<p>
+  <summary>How does the browser see this code?</summary>
+  <p>
 ```javascript
 var msg = "Hello world!";
 
@@ -94,7 +94,7 @@ sayMsg2 = function (msg) {
   console.log("sayMsg2 says: " + msg);
 }
 ```
-</p>
+  </p>
 </details>
 
 
