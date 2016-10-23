@@ -16,16 +16,10 @@ console.log(str2);
 console.log(str1 === str2);
 ```
 
-> Hello World
->
-> Hello World
->
-> true
-
 ### Truthiness & Falsiness
 
 ```javascript
-var und;
+var und; // undefined
 var n = null;
 var arr1 = [ "", "false", "true", und, n, -1, 0, 1, true, false, [], [1,2,3], {}, {a:1}];
 
@@ -39,6 +33,23 @@ for(i; i < len; i++) {
 ```
 
 ### Equality
+
+```javascript
+console.log(undefined == null); // true
+console.log(undefined === null); // false
+
+console.log(0 == "0"); //true
+console.log(0 === "0"); //false
+console.log(true == "true"); // false
+
+var obj = {};
+console.log({} == {}); // false
+console.log(obj == {}); //false
+console.log(obj === obj); // true
+
+console.log([] == []); // false
+console.log("string" === "string"); //true
+```
 
 ### Null, undefined
 
