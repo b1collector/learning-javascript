@@ -56,7 +56,7 @@ console.log(obj === obj); // true
 console.log([] == []); // false
 ```
 
-## 2. Functions
+## Functions
 
 ### Hoisted Function Definitions
 
@@ -246,7 +246,7 @@ function multiply(x){
 console.log(map(multiply(2), [1,2,3,5,8,13,21]));
 ```
 
-## 3. Objects
+## Objects
 
 ### Object Literals
 
