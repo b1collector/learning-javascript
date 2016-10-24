@@ -298,12 +298,12 @@ console.log(myObj.sayHello());
 ### Extension Methods
 
 ```javascript
-Array.prototype.sum = function(arr){
-  var l = arr.length;
+Array.prototype.sum = function(){
+  var l = this.length;
   var sum = 0;
   var i;
   for(i = 0; i < l; i++){
-    var x = arr[i];
+    var x = this[i];
     if(typeof(x) === "number"){
       sum = sum + x
     }
