@@ -297,3 +297,19 @@ console.log(myObj.sayHello());
 
 ### Extension Methods
 
+```javascript
+Array.prototype.sum = function(arr){
+  var l = arr.length;
+  var sum = 0;
+  var i;
+  for(i = 0; i < l; i++){
+    var x = arr[i];
+    if(typeof(x) === "number"){
+      sum = sum + x
+    }
+  }
+  return sum;
+};
+
+console.log([1,2,3,5,8,13,21].sum());
+```
