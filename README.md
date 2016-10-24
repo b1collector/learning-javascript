@@ -248,30 +248,52 @@ console.log(map(multiply(2), [1,2,3,5,8,13,21]));
 
 ## 3. Objects
 
+### Object Literals
+
+```javascript
+var book = {
+    title: "The Maltese Falcon",
+    author: "Dashiell Hammett",
+    publicationDate: 1929,
+    publisher: "Alfred A. Knopf"
+  };
+
+console.log(book.title);
+```
+
 ### Constructors
 
 ```javascript
 function MyObject(name, title){
-  var that = this;
-  that.name = name;
-
-  that.sayHello = function () {
+  this.sayHello = function () {
     console.log("Hello " + title + " " + name + ". How are you?");
-  };
-
-  that.thisVsThat = function () {
-    console.log(that.name);
-    console.log(this.name);
   };
 }
 
-var name = "Bad name";
 var obj = new MyObject("Sam Spade", "Detective");
 obj.sayHello();
-obj.thisVsThat();
 ```
 
 ### Prototype
+
+```javascript
+function MyObject(name, title){
+  this.sayHello = function () {
+    console.log("Hello " + title + " " + name + ". How are you?");
+  };
+}
+
+function MyChildObject(gender, birthDate){
+  this.gender = gender;
+  this.birthDate = birthDate;
+}
+
+MyChildObject.prototype = new MyObject("Sam Spade", "Detective");
+
+var myObj = new MyChildObject("male", "1901-05-16");
+
+console.log(myObj.sayHello());
+```
 
 ### Extension Methods
 
